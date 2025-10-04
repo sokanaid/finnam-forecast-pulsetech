@@ -109,6 +109,9 @@ def main(public_test_candles=None, private_test_candles=None, test_news=None,
     # Сортируем по ticker и begin для консистентности
     predictions = predictions.sort_values(['ticker', 'begin']).reset_index(drop=True)
     
+    # Оставляем только последнюю дату для каждого тикера (самый свежий прогноз)
+    predictions = predictions.groupby('ticker').last().reset_index()
+    
     # Удаляем колонку begin, оставляем только ticker и вероятности
     output_cols = ['ticker'] + [f'p{i}' for i in range(1, 21)]
     submission = predictions[output_cols].copy()
