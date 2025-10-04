@@ -40,6 +40,7 @@ data/processed/
 *.csv
 !sample_submission.csv
 !sample_submission copy.csv
+!data/raw/*.csv
 
 # Models
 models/*.pkl
