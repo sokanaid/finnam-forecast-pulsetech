@@ -54,6 +54,7 @@ logs/
 .ipynb_checkpoints/
 *.ipynb
 !RUN_IN_COLAB.ipynb
+!RUN_WITH_GOOGLE_DRIVE_DATA.ipynb
 
 # Temporary files
 temp_repo/
