@@ -344,24 +344,4 @@ Output: p₁, p₂, ..., p₂₀ ∈ [0, 1]
 Вывод: Хорошая калибровка, не экстремальные значения
 ```
 
----
-
-# Формат для конвертации
-
-**Этот файл можно конвертировать:**
-
-1. **В PowerPoint**: `pandoc PITCH_PRESENTATION.md -o pitch.pptx`
-2. **В PDF**: `pandoc PITCH_PRESENTATION.md -o pitch.pdf`
-3. **В HTML (reveal.js)**: `pandoc -t revealjs -s PITCH_PRESENTATION.md -o pitch.html`
-
-**Или использовать online:**
-- Google Slides (скопировать текст)
-- Marp (markdown презентации)
-- reveal.js (веб-презентации)
-
----
-
-**Время презентации**: ~5 минут (7-9 основных слайдов)  
-**Backup слайды**: детали для Q&A  
-**Формат**: Markdown → легко редактировать и конвертировать
 
