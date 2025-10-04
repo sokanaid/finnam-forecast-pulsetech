@@ -52,6 +52,7 @@ logs/
 # Jupyter
 .ipynb_checkpoints/
 *.ipynb
+!RUN_IN_COLAB.ipynb
 
 # Temporary files
 temp_repo/
