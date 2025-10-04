@@ -89,16 +89,20 @@ class ForecastModel:
                     colsample_bytree=0.8,
                     random_state=RANDOM_SEED,
                     n_jobs=-1,
-                    verbose=-1,
+                    verbosity=-1,  # Используем verbosity вместо verbose
                     class_weight='balanced'
                 )
                 
-                model.fit(
-                    X_train, y_train,
-                    eval_set=[(X_val, y_val)],
-                    eval_metric='auc',
-                    verbose=False
-                )
+                # Обучаем модель без verbose в fit() для совместимости
+                try:
+                    model.fit(
+                        X_train, y_train,
+                        eval_set=[(X_val, y_val)],
+                        eval_metric='auc'
+                    )
+                except TypeError:
+                    # Для старых версий без eval_set
+                    model.fit(X_train, y_train)
             else:
                 # Используем sklearn GradientBoosting если LightGBM недоступен
                 model = GradientBoostingClassifier(
